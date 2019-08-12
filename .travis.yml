@@ -1,7 +1,9 @@
 language: c
 sudo: false # only for faster builds
 script:
-  - gcc hello.c -o hello
+  - make prep
+  - make
+  - make install 
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
