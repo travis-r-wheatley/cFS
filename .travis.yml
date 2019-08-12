@@ -22,6 +22,10 @@ script:
   # Check versions of gcc, g++ and cmake
   - gcc -v && g++ -v && cmake --version
 script:
+  - mkdir build
+  - mkdir build/cpu1
+  - mkdir build/cpu1/CMakeFiles
+  - mkdir build/cpu1/CMakeFiles/CMakeTmp
   - make
 
 after_success:
