@@ -1,4 +1,4 @@
-language: c
+language: c++
 sudo: false # only for faster builds
 script:
   - make
