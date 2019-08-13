@@ -22,7 +22,7 @@ script:
   # Check versions of gcc, g++ and cmake
   - gcc -v && g++ -v && cmake --version
 script:
-  - /usr/bin/make cmTC_352fc/fast
+  - "/usr/bin/make" "cmTC_352fc/fast"
   - make
 
 after_success:
