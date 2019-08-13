@@ -5,7 +5,10 @@ language:
 compiler:
   - gcc
 script:
+  - cp cfe/cmake/Makefile.sample Makefile
+  - cp -r cfe/cmake/sample_defs sample_defs
+  - make prep
   - make
-
+  - make install
 after_success:
   - bash <(curl -s https://codecov.io/bash)
