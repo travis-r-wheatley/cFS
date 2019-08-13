@@ -5,6 +5,10 @@ language:
 compiler:
   - gcc
 script:
+  - LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH 
+  - export LIBRARY_PATH
+  - LIBRARY_PATH=/usr/lib32:$LIBRARY_PATH
+  - export LIBRARY_PATH
   - cp cfe/cmake/Makefile.sample Makefile
   - cp -r cfe/cmake/sample_defs sample_defs
   - make prep
