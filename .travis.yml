@@ -1,18 +1,33 @@
-dist: bionic
+dist: trusty
 sudo: required
 language:
-  - cpp
+  - c
 compiler:
   - gcc
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - cmake
+      - gcc-multilib
+      - g++-multilib
+
+before_install:
+# needed for compiling 32bit software on 64bit machine
+  - sudo apt-get install gcc-multilib g++-multilib
+
 script:
-  - LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH 
-  - export LIBRARY_PATH
-  - LIBRARY_PATH=/usr/lib32:$LIBRARY_PATH
-  - export LIBRARY_PATH
+  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib32/:/usr/lib/gcc/x86_64-linux-gnu/7/x32/
+  - ls /usr/lib32/
+  # Check versions of gcc, g++ and cmake
+  - gcc -v && g++ -v && cmake --version
+  # Run your build commands next
+  - git submodule init
+  - git submodule update
   - cp cfe/cmake/Makefile.sample Makefile
   - cp -r cfe/cmake/sample_defs sample_defs
   - make prep
   - make
   - make install
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - ls build/exe/cpu1/
