@@ -27,6 +27,7 @@ script:
   - git submodule update
   - cp cfe/cmake/Makefile.sample Makefile
   - cp -r cfe/cmake/sample_defs sample_defs
+  - cppcheck --force .
   - make prep
   - make
   - make install
