@@ -12,23 +12,23 @@
         branch = master
 [submodule "apps/ci_lab"]
 	path = apps/ci_lab
-	url = https://github.com/nasa/ci_lab.git
+	url = https://github.com/travis-r-wheatley/ci_lab.git
         branch = master
 [submodule "apps/sample_app"]
 	path = apps/sample_app
-	url = https://github.com/nasa/sample_app.git
+	url = https://github.com/travis-r-wheatley/sample_app.git
         branch = master
 [submodule "apps/sample_lib"]
 	path = apps/sample_lib
-	url = https://github.com/nasa/sample_lib.git
+	url = https://github.com/travis-r-wheatley/sample_lib.git
         branch = master
 [submodule "apps/sch_lab"]
 	path = apps/sch_lab
-	url = https://github.com/nasa/sch_lab.git
+	url = https://github.com/travis-r-wheatley/sch_lab.git
         branch = master
 [submodule "apps/to_lab"]
 	path = apps/to_lab
-	url = https://github.com/nasa/to_lab.git
+	url = https://github.com/travis-r-wheatley/to_lab.git
         branch = master
 [submodule "tools/cFS-GroundSystem"]
 	path = tools/cFS-GroundSystem
